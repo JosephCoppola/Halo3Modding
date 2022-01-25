@@ -8,15 +8,6 @@
     (kill_volume_enable kill_zone_4)
     (kill_volume_enable kill_zone_5)
 
-    ;(sleep_forever reinforce_loop)
-    ;(sleep_forever reinforce_sens)
-    ;(sleep_forever unsc_reinforce_loop)
-    ;(sleep_forever elites_reinforce_loop)
-    ;(sleep_forever covies_reinforce_loop)
-    
-    ;(cinematic_show_letterbox 1)
-    ;(cinematic_set_title title_1)
-	;(cinematic_title_to_gameplay)
 	(print "Start")
     (ai_place pelican_squad_01 1)
     (ai_place r_pelican_01)
@@ -49,10 +40,7 @@
     (object_damage_damage_section met_b "main" 1)
     (object_damage_damage_section met_c "main" 1)
     
-    ;(sleep 120)
     (sleep 20)
-    ;(object_create_anew flood_bomb)
-    ;(object_create_anew upperbomb)
 
     (sleep_forever bomb_set)
 )
@@ -69,16 +57,6 @@
     ;Halo 3 makes me sad with how little it can handle the scars of war...
     (add_recycling_volume hill 15 5)
 )
-
-;(script continuous test
-;    (sleep 10)
-;    (object_damage_damage_section flood_bomb "death" 100)
-;    (sleep 20)
-;    (object_damage_damage_section upperbomb "death" 100)
-;    (sleep 20)
-;    (object_create_anew flood_bomb)
-;    (object_create_anew upperbomb)
-;)
 
 (script continuous ally_objective_loop
     (unsc_objectives)
@@ -303,7 +281,6 @@
     ;Fly to a point we set up in Sapien under "Script data"
 	(cs_fly_to approach/phantom_approach_01)
 	(cs_vehicle_boost false)
-	;(cs_vehicle_speed 0.5)
     (cs_fly_to troop_drop_points/phantom_lc_drop)
     (cs_face 1 troop_drop_points/pelican_face)
 
@@ -311,7 +288,6 @@
     ;Open the phantom
     (unit_open (ai_vehicle_get ai_current_actor))
     (vehicle_unload (ai_vehicle_get ai_current_actor) "phantom_lc")
-    ;(ai_migrate pelican_hog wall_marines_vehicles)
     (sleep 50)
     (vehicle_unload (ai_vehicle_get ai_current_actor) "phantom_p")
     (sleep 10)
@@ -336,7 +312,6 @@
     (cs_face 0 troop_drop_points/pelican_face)
     (cs_vehicle_boost true)
     (cs_fly_to_and_face troop_drop_points/phantom_exit troop_drop_points/phantom_exit)
-    ;(ai_erase reinforce_pelican)
 	(object_destroy (ai_vehicle_get ai_current_actor))
 )
 
@@ -376,7 +351,6 @@
     (cs_fly_to_and_face troop_drop_points/pelican_lc_drop_01 troop_drop_points/pelican_face)
 	
 	(sleep 30)
-    ;(ai_vehicle_enter_immediate pelican_squad_01 (ai_vehicle_get ai_current_actor) "pelican_p")
     ;Open the phantom
     (unit_open (ai_vehicle_get ai_current_actor))
     (vehicle_unload (ai_vehicle_get ai_current_actor) "pelican_lc")
@@ -440,7 +414,6 @@
 		(sleep (random_range 20 45))
 	(object_damage_damage_section (ai_vehicle_get ai_current_actor) "door" 15)
 		(sleep 15)
-    ;(object_damage_damage_section (ai_vehicle_get ai_current_actor) "hull" 10)
     ;Jump out of the pod
 	(ai_vehicle_exit ai_current_actor)
 	(ai_cannot_die ai_current_actor FALSE)
