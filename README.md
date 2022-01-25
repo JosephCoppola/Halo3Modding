@@ -7,3 +7,5 @@
 
 - ${path_to_editing_kit}\H3EK\tags\levels
 - ${path_to_editing_kit}\H3EK\data\levels
+
+### To view some of these mods in action, visit https://www.youtube.com/playlist?list=PLqW0hILojJU3Ght2SQgBpFnrRFoori9Fz to see the mods in action! 
